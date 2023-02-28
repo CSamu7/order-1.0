@@ -1,0 +1,24 @@
+.btnAdd{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+
+  background-color: rgb(56, 238, 238);
+  border: 0;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+@media (hover: hover){
+  .btnAdd:hover{
+    transform: scale(1.1);
+  }
+}
+
+.btnText{
+  font-size: 1.5rem;
+}
+

@@ -1,0 +1,52 @@
+.task{
+  width: clamp(200px, 80vw, 400px);
+  padding: 10px;
+
+  background-color: rgb(248, 109, 84);
+  box-shadow: 1px 1px 5px #333;
+  cursor: pointer;
+}
+
+.taskHeader{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.taskTitle{
+  font-size: clamp(.8rem, 4vw, 1.1rem);
+  margin: 0;
+}
+
+.taskTitle::after{
+  position: absolute;
+  content: "";
+  bottom: 3px;
+  left: 0;
+
+  height: 2px;
+  width: 100%;
+  background-color: #3d3a3a;
+}
+
+.taskDivType{
+  display: flex;
+  align-items: center;
+}
+
+.taskImg{
+  width: 30px;
+}
+
+.taskType{
+  font-size: clamp(.65rem, 3vw, .9rem);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.taskDescription{
+  font-size: clamp(.65rem, 3vw, .9rem);
+  text-align: left;
+}

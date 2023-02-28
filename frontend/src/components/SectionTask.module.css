@@ -1,0 +1,20 @@
+.sectionTask{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: aliceblue;
+  box-shadow: 0px 0px 5px #333;
+  gap: 15px;
+}
+
+.sectionHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTaskTitle{
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  text-align: center;
+  margin: 0;
+}
