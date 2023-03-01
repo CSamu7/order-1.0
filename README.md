@@ -12,7 +12,8 @@ This is a personal project that helps to order my daily life. This version is so
 The project is created with:
 * React 17
 * Node 18.14.1
-* MySQL
+* MySQL2
+* dotenv
 
 ## Setup
 To run this proyect, 
