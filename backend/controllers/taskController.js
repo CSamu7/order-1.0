@@ -5,7 +5,7 @@ const connection = connectDB()
 
 controller.getTask = (req, res) => {
   const query = `
-  SELECT user.username, task.title, task.description, role.name as role_name, category.name as category_name FROM task
+  SELECT task.id_task, user.username, task.title, task.description, role.name as role, category.name as category_name FROM task
 	JOIN user ON user.id_user = task.id_user
     JOIN role ON role.id_role = user.id_role
     JOIN category ON category.id_category = task.id_category
@@ -18,6 +18,16 @@ controller.getTask = (req, res) => {
     
     return res.send(results)
   })   
+}
+
+controller.getAllTasks = (req, res) => {
+  let query = `SELECT * FROM TASK`
+
+  connection.query(query, (err, results) => {
+    if(err) return res.status(500).send("No server")
+
+    return res.send(results)
+  })
 }
 
 controller.postTask = (req, res) => {
@@ -60,16 +70,6 @@ controller.deleteTask = (req, res) => {
     if(results.affectedRows === 0) return res.status(404).send("No task founded")
 
     res.send("deleted task")
-  })
-}
-
-controller.getAllTasks = (req, res) => {
-  let query = `SELECT * FROM TASK`
-
-  connection.query(query, (err, results) => {
-    if(err) return res.status(500).send("No server")
-
-    return res.send(results)
   })
 }
 
