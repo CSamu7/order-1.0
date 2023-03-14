@@ -1,7 +1,11 @@
+import { useState } from "react";
 import styles from "./Task.module.css";
 
 export default function (props) {
+  const [isShowMore, setIsShowMore] = useState(false);
   let { title, description, type } = props;
+
+  const handleShowMore = () => setIsShowMore(!isShowMore);
 
   return (
     <article className={styles.task}>
@@ -16,7 +20,11 @@ export default function (props) {
           <p className={styles.taskType}>{type}</p>
         </div>
       </div>
-      <p className={styles.taskDescription}>{description}</p>
+
+      {isShowMore && <p className={styles.taskDescription}>{description}</p>}
+      <button onClick={handleShowMore}>
+        Mostrar {isShowMore ? "menos" : "mas"}
+      </button>
     </article>
   );
 }
